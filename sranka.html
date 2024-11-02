@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quasar app</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/quasar@2.16.5/dist/quasar.prod.css" rel="stylesheet" type="text/css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div id="app">
+    <q-layout view="hHh lpR fFf">
+      <q-header elevated class="bg-blue text-white">
+        <q-toolbar>
+          <q-toolbar-title class="text-center">Quasar app, minimal template</q-toolbar-title>
+        </q-toolbar>
+      </q-header>
+
+      <q-page-container>
+        <q-page class="q-pa-md">
+          <p>Variable text has value: {{text}}</p>
+          <input v-model="text" type="text">
+          <br><br>
+          <p>Variable year has value: <button @click="year--">-</button> 
+            {{year}} <button @click="year++">+</button>
+            <button @click="year=2077">2077</button>
+          </p>
+          <p>Are we in school now? <span v-if="inSchool == true">Yes!</span><span v-if="inSchool == false">No!</span></p>
+          <button @click="inSchool = !inSchool">invert value</button>
+          <hr>
+          <p>Value of "inSchool" variable is {{inSchool}}.</p>
+          
+          <span class="mimon" v-if="inSchool == true && year <= 2076"> <img src="https://media1.tenor.com/m/JewwwKDYQ1gAAAAC/farting-minions.gif"></span>
+          <span class="kyanu" v-if="inSchool == true && year >= 2077"> <img src="https://media1.tenor.com/m/B2GDjlq5IXIAAAAC/cyberpunk2077-keanu-reeves.gif"></span>
+<br>
+          <span class="mgsv" v-if="inSchool == false"> 
+            <img class="obrazek"src="//s2.ezgif.com/tmp/ezgif-2-d7fba7f86d.gif">
+          </span>
+          
+        </q-page>
+      </q-page-container>
+
+      <q-footer elevated class="bg-blue text-white">
+        <q-toolbar>
+          <q-toolbar-title class="text-center">(c) 2024, Among us</q-toolbar-title>
+        </q-toolbar>
+      </q-footer>
+    </q-layout>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.4.31/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quasar@2.16.5/dist/quasar.umd.prod.js"></script>
+
+</body>
+</html>

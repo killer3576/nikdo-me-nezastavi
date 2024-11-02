@@ -1,0 +1,29 @@
+html, body {
+  font-size: 16px;
+}
+
+div .q-page {
+  font-size: 1rem !important;
+}
+.mgsv{
+  display: flex;
+  justify-content: center;
+  height: 60vw;
+  max-height: 600px;
+}
+.mimon{
+  display: flex;
+  flex:1;
+  justify-content: center;
+  height:50vw;
+  margin:20px
+}
+
+.kyanu{
+  display: flex;
+  flex:1;
+  justify-content: center;
+  height:50vw;
+  margin:20px
+}
+
