@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barvomat 3000</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/quasar@2.16.5/dist/quasar.prod.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <div id="app">
+      <q-layout view="hHh lpR fFf">
+        <q-header elevated class="bg-black text-white">
+          <q-toolbar>
+            <q-toolbar-title class="barvicky text-center"> Barevný program </q-toolbar-title>
+            <img class="logo" src="ezgif.com-webp-maker (1).webp" />
+          </q-toolbar>
+        </q-header>
+
+        <q-page-container>
+          <q-page class="q-pa-md">
+            <!-- HTML -->
+            <div class="text-center">
+              <h3>Barevný program</h3>
+              <h4>{{getFillColorMix}}</h4>
+              <br />
+              <div class="row q-my-lg">
+                <div class="col-2">{{hexColorR}}</div>
+                <div class="col">
+                  <q-slider v-model="colorR" :min="0" :max="255" :step="1" label label-always color="red"></q-slider>
+                </div>
+              </div>
+              <div class="row q-my-lg">
+                <div class="col-2">{{hexColorG}}</div>
+                <div class="col">
+                  <q-slider v-model="colorG" :min="0" :max="255" :step="1" label label-always color="green"></q-slider>
+                </div>
+              </div>
+              <div class="row q-my-lg">
+                <div class="col-2">{{hexColorB}}</div>
+                <div class="col">
+                  <q-slider v-model="colorB" :min="0" :max="255" :step="1" label label-always color="blue"></q-slider>
+                </div>
+              </div>
+
+              <svg viewBox="0 0 320 160">
+                <circle cx="80" cy="50" r="30" stroke="black" :fill="getFillColorR"></circle>
+                <circle cx="45" cy="110" r="30" stroke="black" :fill="getFillColorG"></circle>
+                <circle cx="115" cy="110" r="30" stroke="black" :fill="getFillColorB"></circle>
+                <circle cx="240" cy="80" r="60" stroke="black" :fill="getFillColorMix"></circle>
+              </svg>
+            </div>
+          </q-page>
+        </q-page-container>
+
+        <q-footer elevated class="bg-black text-white">
+          <q-toolbar>
+            <q-toolbar-title class="text-center">(c) 2024, Vojtěch Svačina</q-toolbar-title>
+          </q-toolbar>
+        </q-footer>
+      </q-layout>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.4.31/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quasar@2.16.5/dist/quasar.umd.js"></script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
